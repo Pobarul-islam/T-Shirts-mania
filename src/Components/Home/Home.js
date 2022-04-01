@@ -1,6 +1,7 @@
 import React from "react";
 import useTShirts from "../../hooks/useTShirts";
 import Cart from "../Cart/Cart";
+import TShirt from "../TShirt/TShirt";
 import "./Home.css";
 
 const Home = () => {
@@ -8,10 +9,13 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="tShirts-container">
-        <h3>{tShirts.length}</h3>
+        {tShirts.map((tShirt) => (
+          <TShirt key={tShirt._id} tShirt={tShirt}></TShirt>
+        ))}
       </div>
-      <div className="cart-container"></div>
-      <Cart></Cart>
+      <div className="cart-container">
+        <Cart></Cart> 
+      </div>
     </div>
   );
 };
