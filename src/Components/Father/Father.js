@@ -8,7 +8,7 @@ const Father = ({ house, ornaments }) => {
     <div style={{ display: "flex" }}>
       <h4>Father</h4>
       <p>House: {house}</p>
-      <MySelf house={house} ornaments={ornaments}></MySelf>
+      <MySelf house={house} ></MySelf>
       <Sister house={house}></Sister>
       <Brother house={house}></Brother>
     </div>

@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
-import './Grandpa.css'
-import Aunty from '../Aunty/Aunty';
-import Father from '../Father/Father';
-import Uncle from '../Uncle/Uncle';
+import React, { createContext, useState } from "react";
+import "./Grandpa.css";
+import Aunty from "../Aunty/Aunty";
+import Father from "../Father/Father";
+import Uncle from "../Uncle/Uncle";
 
+ export const RingContext = createContext("diamond");
 const Grandpa = () => {
-    const [house, setHouse] = useState(1);
-    const ornaments = 'Diamond Ring'
-    const handleBuyAHouse = () => {
-        const newHouseCount = house + 1;
-        setHouse(newHouseCount);
-    }
-   
-    return (
+  const [house, setHouse] = useState(1);
+  const ornaments = "Diamond Ring";
+  const handleBuyAHouse = () => {
+    const newHouseCount = house + 1;
+    setHouse(newHouseCount);
+  };
+
+  return (
+    <RingContext.Provider value={house}>
       <div className="grandpa">
         <h4>Grandpa</h4>
 
@@ -22,13 +24,14 @@ const Grandpa = () => {
         </p>
         <div>
           <section style={{ display: "flex" }}>
-            <Father house={house} ornaments={ornaments}></Father>
+            <Father house={house} ></Father>
             <Uncle house={house}></Uncle>
             <Aunty house={house}></Aunty>
           </section>
         </div>
       </div>
-    );
+    </RingContext.Provider>
+  );
 };
 
 export default Grandpa;

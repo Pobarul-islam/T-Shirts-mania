@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useTShirts from "../../hooks/useTShirts";
 import Cart from "../Cart/Cart";
-import TShirt from "../TShirt/TShirt";
+import  TShirt from "../TShirt/TShirt";
 import "./Home.css";
 
 const Home = () => {
